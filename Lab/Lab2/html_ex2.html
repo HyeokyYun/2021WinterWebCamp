@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2_Exercises</title>
+
+    <style>
+        body{
+            margin: 20px;
+        }
+        hr{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lab2_Exercises(2021.01.05)</h1>
+    <h2>HTML Forms</h2>
+
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </form> 
+    <hr>
+    <h2>Text input fields</h2>
+
+    <form>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+    <hr>
+
+    <h2>Radio Buttons</h2>
+
+    <form>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+    <label for="other">Other</label>
+    <hr>
+    
+    <h2>Checkboxes</h2>
+    <form>
+        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+        <label for="vehicle1"> I have a bike</label><br>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> I have a car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> I have a boat</label>
+    </form>
+    <hr>
+
+    <h2>The select Element</h2>
+    <label for="cars">Choose a car:</label>
+    <select id="cars" name="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="fiat">Fiat</option>
+        <option value="audi">Audi</option>
+    </select>
+    <hr>
+    <h2>Textarea</h2>
+    <p>The textarea element defines a multi-line input field.</p>
+
+    <form action="/action_page.php">
+        <textarea name="message" rows="10" cols="30"></textarea>
+        <br><br>
+        <input type="submit">
+    </form>
+    <hr>
+    <h2>The button Element</h2>
+
+    <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+    <hr>
+    <h2>Grouping Form Data with Fieldset</h2>
+
+    <p>The fieldset element is used to group related data in a form, and the legend element defines a caption for the fieldset element.</p>
+
+    <form action="/action_page.php">
+    <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+    </fieldset>
+    </form>
+    <hr>
+    <h2>The datalist Element</h2>
+
+    <p>The datalist element specifies a list of pre-defined options for an input element.</p>
+
+    <form action="/action_page.php">
+    <input list="browsers" name="browser">
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <input type="submit">
+    </form>
+
+    <hr>
+    <h2>The output Element</h2>
+    <p>The output element represents the result of a calculation.</p>
+
+    <form action="/action_page.php"
+    oninput="x.value=parseInt(a.value)+parseInt(b.value)"> 0
+    <input type="range" id="a" name="a" value="50"> 100 +
+    <input type="number" id="b" name="b" value="50"> =
+    <output name="x" for="a b"></output>
+    <br><br>
+    <input type="submit">
+    </form>
+
+    <hr>
+    <h2>Password field</h2>
+
+    <p>The <strong>input type="password"</strong> defines a password field:</p>
+
+    <form action="/action_page.php">
+    <label for="username">Username:</label><br>
+    <input type="text" id="username" name="username"><br>
+    <label for="pwd">Password:</label><br>
+    <input type="password" id="pwd" name="pwd"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <p>The characters in a password field are masked (shown as asterisks or circles).</p>
+    <hr>
+
+    <h2>Reset Button</h2>
+
+    <p>The <strong>input type="reset"</strong> defines a reset button that resets all form values to their default values:</p>
+
+    <form action="/action_page.php">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </form> 
+
+    <p>If you change the input values and then click the "Reset" button, the form-data will be reset to the default values.</p>
+    <hr>
+
+    <h2>Show a Color Picker</h2>
+
+    <p>The <strong>input type="color"</strong> is used for input fields that should contain a color.</p>
+
+    <form action="/action_page.php">
+    <label for="favcolor">Select your favorite color:</label>
+    <input type="color" id="favcolor" name="favcolor" value="#ff0000">
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h2>Date Field</h2>
+
+    <p>The <strong>input type="date"</strong> is used for input fields that should contain a date.</p>
+
+    <form action="/action_page.php">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>Email Field</h2>
+
+    <p>The <strong>input type="email"</strong> is used for input fields that should contain an e-mail address:</p>
+
+    <form action="/action_page.php">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>File upload</h2>
+
+    <p>Show a file-select field which allows a file to be chosen for upload:</p>
+    <form action="/action_page.php">
+    <label for="myfile">Select a file:</label>
+    <input type="file" id="myfile" name="myfile"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h2>Number Field</h2>
+
+    <p>The <strong>input type="number"</strong> defines a numeric input field.</p>
+
+    <p>You can use the min and max attributes to add numeric restrictions in the input field:</p>
+
+    <form action="/action_page.php">
+    <label for="quantity">Quantity (between 1 and 5):</label>
+    <input type="number" id="quantity" name="quantity" min="1" max="5">
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h2>Range Field</h2>
+
+    <p>Depending on browser support: The input type "range" can be displayed as a slider control.<p>
+
+    <form action="/action_page.php" method="get">
+    <label for="vol">Volume (between 0 and 50):</label>
+    <input type="range" id="vol" name="vol" min="0" max="50">
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h2>Search Field</h2>
+    <p>The <strong>input type="search"</strong> is used for search fields (behaves like a regular text field):</p>
+
+    <form action="/action_page.php">
+    <label for="gsearch">Search Google:</label>
+    <input type="search" id="gsearch" name="gsearch">
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>The input placeholder attribute</h2>
+
+    <p>The placeholder attribute specifies a short hint that describes the expected value of an input field.</p>
+
+    <form action="/action_page.php">
+    <label for="phone">Enter a phone number:</label>
+    <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <h1>The input required attribute</h1>
+
+    <p>The required attribute specifies that an input field must be filled out before submitting the form.</p>
+
+    <form action="/action_page.php">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <input type="submit" value="Submit">
+    </form>
+    <hr>
+
+    <h1>HTML Graphics</h1>
+    <h2>Draw a Circle</h2>
+    <canvas id="myCanvas-circle" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+        <script>
+        var c = document.getElementById("myCanvas-circle");
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        ctx.arc(95,50,40,0,2*Math.PI);
+        ctx.stroke();
+    </script> 
+    <hr>
+    <h2>Draw a Text</h2>
+    <canvas id="myCanvas-text" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+        <script>
+        var c = document.getElementById("myCanvas-text");
+        var ctx = c.getContext("2d");
+        ctx.font = "30px Arial";
+        ctx.fillText("Hello World",10,50);
+    </script>
+    <hr>
+    <h2>Draw Linear Gradient</h2>
+    <canvas id="myCanvas-grad" width="200" height="100" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML canvas tag.</canvas>
+        
+        <script>
+        var c = document.getElementById("myCanvas-grad");
+        var ctx = c.getContext("2d");
+        // Create gradient
+        var grd = ctx.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0,"red");
+        grd.addColorStop(1,"white");
+        // Fill with gradient
+        ctx.fillStyle = grd;
+        ctx.fillRect(10,10,150,80);
+    </script>
+    <hr>
+
+    <h2>SVG Circle</h2>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40"
+        stroke="green" stroke-width="4" fill="yellow" />
+      Sorry, your browser does not support inline SVG.
+    </svg>
+
+    <hr>
+    <h2>SGV Rectangle</h2>
+    <svg width="400" height="100">
+        <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+    </svg>
+    <hr>
+
+    <h2>SGV Rounded Rectangle</h2>
+    <svg width="400" height="180">
+        <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+        style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+    </svg>
+    <hr>
+    <h2>SGC Star</h2>
+    <svg width="300" height="200">
+        <polygon points="100,10 40,198 190,78 10,78 160,198"
+        style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+    </svg>
+
+    <hr>
+
+    <h2>SGV Logo</h2>
+    <svg height="130" width="500">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+        <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+        Sorry, your browser does not support inline SVG.
+    </svg>
+</body>
+</html>
