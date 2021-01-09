@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS_Style2</title>
+
+    <style>
+        body{
+            background-color: #d14836;
+            font-family: Arial;
+            line-height: 20px;
+        }
+
+        .wrapper{
+            position: relative;
+            overflow:auto;
+        }
+
+        #top{
+            color: white;
+            padding: 15px;
+            font-size: 30px;
+            line-height: 26px;
+        }
+
+        #top h1{
+            margin: 0;
+            line-height: 50px;
+        }
+
+        #main{
+            background-color: white;
+            padding: 10px;
+            font: 80% Verdana;
+        }
+        #menubar{
+            width: 190px;
+            float: right;
+        }
+
+        #main h1, #main h2{
+            color: #d14836;
+        }
+
+        a{
+            color:#d14836;
+            text-decoration: none;
+        }
+
+        a:hover{
+            text-decoration: underline;
+        }
+        #sidebar{
+            background-color: #F6DAD7;
+            margin: 0;
+            padding: 10px;
+            color: #d14836;
+        }
+        #bottom{
+            color: white;
+            text-align: center;
+            font-size: 70%;
+            padding: 10px;
+        }
+        #menulist{
+            padding: 0;
+            font: 16px verdana;
+        }
+
+        .menuitem{
+            background-color: #d14836;
+            width: 155px;
+            list-style-type: none;
+            color: white;
+            border: 1px solid #d14836;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+
+        .menuitem:nth-child(2){
+            background-color: white;
+            color:#d14836;
+            font-weight: bold;
+        }
+
+        .menuitem:hover{
+            background-color: white;
+            color:#d14836;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div id="title" style="background-color: bisque; padding: 5px">
+            <p>21700487 Hyeok Yun</p>
+            <p>Lab3-3 : Stylesheet(Style2)_210106</p>
+            <hr>
+        </div>
+    
+        <div id="top">
+            <h1>Welcom to My Homepage</h1>
+            <p>Use the menu to select different Stylesheets</p>
+        </div>
+        <div class="wrapper">
+            <div id="menubar">
+                <ul id="menulist">
+                    <li class="menuitem" onclick="location.href='http://hyeokayun.dothome.co.kr/2021Camp/Lab3/css_style1.html'">Stylesheet 1</li>
+                    <li class="menuitem" onclick="location.href='http://hyeokayun.dothome.co.kr/2021Camp/Lab3/css_style2.html'">Stylesheet 2</li>
+                    <li class="menuitem" onclick="location.href='http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_style3.html'">Stylesheet 3</li>
+                    <li class="menuitem" onclick="location.href='http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_style4.html'">Stylesheet 4</li>
+                    <li class="menuitem" onclick="location.href='http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_nostyle.html'">No Stylesheet</li>
+                </ul>
+            </div>
+            <div id="main">
+                <h1>Same Page Different Stylesheets</h1>
+                <p>
+                    This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:
+                    <br>
+                    <a href="http://hyeokayun.dothome.co.kr/2021Camp/Lab3/css_style1.html">Stylesheet1</a>,
+                    <a href="http://hyeokayun.dothome.co.kr/2021Camp/Lab3/css_style2.html">Stylesheet2</a>,
+                    <a href="http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_style3.html">Stylesheet3</a>,
+                    <a href="http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_style4.html">Stylesheet4</a>
+                </p>
+                <h2>No Styles</h2>
+                <p>
+                    This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet:
+                    <br>
+                    <a href="http://hyeokayun.dothome.co.kr/2021Camp/Lab4/css_nostyle.html">No Stylesheet</a>.
+                </p>
+            </div>
+            <div id="sidebar">
+                <h3>Side-bar</h3>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+            </div>
+        </div>
+        <div id="bottom">
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+        </div>
+    </body>
+    </html>
+</body>
+</html>
