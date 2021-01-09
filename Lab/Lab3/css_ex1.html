@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS_Lab3-1</title>
+
+    <style>
+
+        #navbar{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            margin-bottom: 10px;
+        }
+
+
+          
+        #color{
+            background-color: tomato;
+            color: black;
+            border: 5px solid violet;
+            padding: 5px;
+        }
+
+        #background{
+            background-image: url("https://images.unsplash.com/photo-1602525655543-a640f6d9f74b?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+            height: 500px;
+            background-repeat: no-repeat;
+        }
+
+        p.dotted {border-style: dotted;}
+        p.dashed {border-style: dashed;}
+        p.solid {border-style: solid;}
+        p.double {border-style: double;}
+        p.groove {border-style: groove;}
+        p.ridge {border-style: ridge;}
+        p.inset {border-style: inset;}
+        p.outset {border-style: outset;}
+        p.none {border-style: none;}
+        p.hidden {border-style: hidden;}
+        p.mix {border-style: dotted dashed solid double;}
+        p.one {
+            border-style: solid;
+            border-color: red;
+          }
+          
+        p.two {
+            border-style: solid;
+            border-color: green;
+        } 
+          
+        p.three {
+            border-style: dotted;
+            border-color: blue;
+        }
+        p.boderbottom {
+            border-bottom: 6px solid red;
+            background-color: lightgrey;
+        }
+
+        #number4 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+          
+        li {
+            float: left;
+        }
+          
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+          
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+          
+        .active {
+            background-color: #4CAF50;
+        }
+
+        input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+          
+          input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type=submit]:hover {
+            background-color: #45a049;
+          }
+          
+          #cssform {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab3-1 : CSS Home ~ CSS Specificity_210106</p>
+        <hr>
+    </div>
+
+    <h1>CSS 정리페이지</h1>
+    <ul id="navbar">
+        <li id="navlist"><a class="active" href="#title">Home</a></li>
+        <li id="navlist"><a href="#color">Color</a></li>
+        <li id="navlist"><a href="#background">Background</a></li>
+        <li id="navlist"><a href="#border">Border</a></li>
+        <li id="navlist"><a href="#navigation">Navigation</a></li>
+        <li id="navlist"><a href="#cssform">Form</a></li>
+    </ul>
+    <div id="color">
+        <h1>1. CSS Colors</h1>
+        <p>Background color is Tomato<br>
+            Text color is Black<br>
+            Border color is Violet<br>
+        </p>
+    </div>
+    <hr>
+    
+    <div id="background">
+        <h1 style="color: white; padding: 5px;">2. CSS Background</h1>
+    </div>
+
+    <div id="border">
+    <h1>3. The border-style Property</h1>
+    <p>This property specifies what kind of border to display:</p>
+
+    <p class="dotted">A dotted border.</p>
+    <p class="dashed">A dashed border.</p>
+    <p class="solid">A solid border.</p>
+    <p class="double">A double border.</p>
+    <p class="groove">A groove border.</p>
+    <p class="ridge">A ridge border.</p>
+    <p class="inset">An inset border.</p>
+    <p class="outset">An outset border.</p>
+    <p class="none">No border.</p>
+    <p class="hidden">A hidden border.</p>
+    <p class="mix">A mixed border.</p>
+    <p class="one">A solid red border</p>
+    <p class="two">A solid green border</p>
+    <p class="three">A dotted blue border</p>
+    <p class="boderbottom">A boder bottom.</p>
+    </div>
+
+    <div id="navigation">
+    <h1>4. Navigation Bar</h1>
+    <ul id="number4">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+    </div>
+
+    <h1>5. CSS Form</h1>
+    <div id="cssform">
+    <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      
+        <label for="country">Country</label>
+        <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
