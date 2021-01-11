@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_ex1</title>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab5-1 : JS_Home~Break_210108</p>
+        <hr>
+    </div>
+
+    <div id="n1">
+        <h2>What Can JavaScript Do?</h2>
+        <p id="demo1">JavaScript can change HTML content.</p>
+        <button type="button" onclick='document.getElementById("demo1").innerHTML = "Hello JavaScript!"'>Click
+            Me!</button>
+    </div>
+
+    <h2>JavaScript For Loop</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        var text = "";
+        var i;
+        for (i = 0; i < 5; i++) {
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+    <h2>JavaScript Switch</h2>
+    <p id="demo3"></p>
+
+    <script>
+        var day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";
+        }
+        document.getElementById("demo3").innerHTML = "Today is " + day;
+    </script>
+
+    <h2>JavaScript Condition</h2>
+    <p>Click the button to display a time-based greeting:</p>
+
+    <button onclick="myFunction4()">Try it</button>
+
+    <p id="demo4"></p>
+
+    <script>
+        function myFunction4() {
+            var hour = new Date().getHours();
+            var greeting;
+            if (hour < 18) {
+                greeting = "Good day";
+            } else {
+                greeting = "Good evening";
+            }
+            document.getElementById("demo4").innerHTML = greeting;
+        }
+    </script>
+
+    <h2>JavaScript Comparisons</h2>
+
+    <p>Input your age and click the button:</p>
+
+    <input id="age" value="18" />
+
+    <button onclick="myFunction5()">Try it</button>
+
+    <p id="demo5"></p>
+
+    <script>
+        function myFunction5() {
+            var age, voteable;
+            age = Number(document.getElementById("age").value);
+            if (isNaN(age)) {
+                voteable = "Input is not a number";
+            } else {
+                voteable = (age < 18) ? "Too young" : "Old enough";
+            }
+            document.getElementById("demo5").innerHTML = voteable;
+        }
+    </script>
+
+    <h2>JavaScript Math.random()</h2>
+
+    <p>Every time you click the button, getRndInteger(min, max) returns a random number between 1 and 10 (both
+        included):</p>
+
+    <button onclick="document.getElementById('demo6').innerHTML = getRndInteger(1,44)">Click Me</button>
+
+    <p id="demo6"></p>
+
+    <script>
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+
+    <h2>JavaScript Array Sort</h2>
+
+    <p>The sort() method sorts an array alphabetically.</p>
+
+    <button onclick="myFunction1()">Try it</button>
+
+    <p id="demo7"></p>
+
+    <script>
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo7").innerHTML = fruits;
+
+        function myFunction1() {
+            fruits.sort();
+            document.getElementById("demo7").innerHTML = fruits;
+        }
+    </script>
+
+    <h2>JavaScript Array Sort Reverse</h2>
+
+    <p>The reverse() method reverses the elements in an array.</p>
+    <p>By combining sort() and reverse() you can sort an array in descending order.</p>
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo8"></p>
+
+    <script>
+        // Create and display an array:
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo8").innerHTML = fruits;
+
+        function myFunction2() {
+            // First sort the array
+            fruits.sort();
+            // Then reverse it:
+            fruits.reverse();
+            document.getElementById("demo8").innerHTML = fruits;
+        }
+    </script>
+
+    <h2>JavaScript Numeric Array Sort</h2>
+
+    <p>Click the button to sort the array in ascending order.</p>
+
+    <button onclick="myFunction3()">Try it</button>
+
+    <p id="demo9"></p>
+
+    <script>
+        var points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo9").innerHTML = points;
+
+        function myFunction3() {
+            points.sort(function (a, b) {
+                return a - b
+            });
+            document.getElementById("demo9").innerHTML = points;
+        }
+    </script>
+
+
+</body>
+
+</html>
