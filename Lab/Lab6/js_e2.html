@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Ex2</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab6-1 : JS_Type Conversion~JSON & JS Form_210111</p>
+        <hr>
+    </div>
+
+    <h2>1. The JavaScript typeof Operator</h2>
+
+    <p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML =
+            "Type of John is " + typeof "john" + "<br>" +
+            "Type of 3.14 is " + typeof 3.14 + "<br>" +
+            "Type of NaN is " + typeof NaN + "<br>" +
+            "Type of false is " + typeof false + "<br>" +
+            "Type of [1, 2, 3, 4] is " + typeof [1, 2, 3, 4] + "<br>" +
+            "Type of Method is " + typeof {
+                name: 'john',
+                age: 34
+            } + "<br>" +
+            "Type of Date is " + typeof new Date() + "<br>" +
+            "Type of function() {} is " + typeof
+
+        function () {} + "<br>" +
+        "Type of mtCar is " + typeof myCar + "<br>" +
+            "Type of null is " + typeof null;
+    </script>
+
+    <hr>
+
+    <h2>2. The JavaScript String() Method</h2>
+
+    <p>The String() method can convert a number to a string.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        var x = 123;
+        document.getElementById("demo2").innerHTML =
+            String(x) + "<br>" +
+            String(123) + "<br>" +
+            String(100 + 23);
+    </script>
+
+    <hr>
+
+    <h2>3. JavaScript Number Methods</h2>
+
+    <p>The toString() method converts a number to a string.</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        var x = 123;
+        document.getElementById("demo3").innerHTML =
+            x.toString() + "<br>" +
+            (123).toString() + "<br>" +
+            (100 + 23).toString();
+    </script>
+
+    <hr>
+
+    <h2>4. JavaScript String Methods</h2>
+
+    <p>Search a string for "W3Schools", and display the position of the match:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var str = "Visit W3Schools!";
+        var n = str.search("W3Schools");
+        document.getElementById("demo4").innerHTML = n;
+    </script>
+
+    <hr>
+
+    <h2>5. JavaScript Regular Expressions</h2>
+
+    <p>Search a string for "w3Schools", and display the position of the match:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        var str = "Visit W3Schools!";
+        var n = str.search(/w3Schools/i);
+        document.getElementById("demo5").innerHTML = n;
+    </script>
+
+    <hr>
+
+    <h2>6. JavaScript String Methods</h2>
+
+    <p>Replace "Microsoft" with "Google" in the paragraph below:</p>
+
+    <button onclick="myFunction1()">Try it</button>
+
+    <p id="demo6">Please visit Microsoft!</p>
+
+    <script>
+        function myFunction1() {
+            var str = document.getElementById("demo6").innerHTML;
+            var txt = str.replace("Microsoft", "Google");
+            document.getElementById("demo6").innerHTML = txt;
+        }
+    </script>
+
+    <hr>
+
+    <h2>7. JavaScript Regular Expressions</h2>
+
+    <p>Replace "pohang" with "Busan" in the paragraph below:</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo7">Please visit Pohang and Busan!</p>
+
+    <script>
+        function myFunction2() {
+            var str = document.getElementById("demo7").innerHTML;
+            var txt = str.replace(/pohang/i, "Busan");
+            document.getElementById("demo7").innerHTML = txt;
+        }
+    </script>
+
+    <hr>
+
+    <h2>8. Error</h2>
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo8" type="text">
+    <button type="button" onclick="myFunction3()">Test Input</button>
+    <p id="p01"></p>
+
+    <script>
+        function myFunction3() {
+            var message, x;
+            message = document.getElementById("p01");
+            message.innerHTML = "";
+            x = document.getElementById("demo8").value;
+            try {
+                if (x == "") throw "empty";
+                if (isNaN(x)) throw "not a number";
+                x = Number(x);
+                if (x < 5) throw "too low";
+                if (x > 10) throw "too high";
+                else throw "Good";
+            } catch (err) {
+                message.innerHTML = "Input is " + err;
+            } finally {
+                document.getElementById("demo8").value = "";
+            }
+        }
+    </script>
+
+    <hr>
+
+    <h2>9. JavaScript Class Method</h2>
+
+    <p>Pass a parameter into the "age()" method.</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            age(x) {
+                return x - this.year;
+            }
+        }
+
+        let date = new Date();
+        let year = date.getFullYear();
+
+        let myCar = new Car("Ford", 2014);
+        document.getElementById("demo9").innerHTML =
+            "My car is " + myCar.age(year) + " years old.";
+    </script>
+
+    <hr>
+
+    <h2>10. JS Form1_Validation</h2>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            if (x == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+        }
+    </script>
+    <form name="myForm" action="#" onsubmit="return validateForm()" method="post">
+        Name: <input type="text" name="fname">
+        <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+
+    <h2>11. JS Form2_Validation</h2>
+
+    <form action="#" method="post">
+        <input type="text" name="fname" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>If you click submit, without filling out the text field,
+        your browser will display an error message.</p>
+</body>
+
+</html>
