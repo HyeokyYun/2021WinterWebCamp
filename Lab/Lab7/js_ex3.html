@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_Ex3_DOM</title>
+
+    <style>
+        #container {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            background: yellow;
+        }
+
+        #animate {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab7-1 : JS_DOM_210112</p>
+        <hr>
+    </div>
+
+    <h2>DOM Methods</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML = "Hello World!";
+    </script>
+
+    <hr>
+    <h2>JavaScript can Change HTML</h2>
+
+    <p id="p1">Hello World!</p>
+
+    <script>
+        document.getElementById("p1").innerHTML = "New text!";
+    </script>
+
+    <p>The paragraph above was changed by a script.</p>
+
+    <hr>
+    <p id="p3">Hello World!</p>
+    <p id="p4">Hello World!</p>
+
+    <script>
+        document.getElementById("p4").style.color = "blue";
+        document.getElementById("p4").style.fontFamily = "Arial";
+        document.getElementById("p4").style.fontSize = "larger";
+    </script>
+
+    <p>The paragraph above was changed by a script.</p>
+
+    <hr>
+    <h2 id="id1">Change Heading Color</h2>
+
+    <button type="button" onclick="document.getElementById('id1').style.color = 'red'">
+        Click Me!</button>
+
+    <hr>
+    <h2>DOM Animation</h2>
+    <p><button onclick="myMove()">Click Me</button></p>
+
+    <div id="container">
+        <div id="animate"></div>
+    </div>
+
+    <script>
+        function myMove() {
+            var elem = document.getElementById("animate");
+            var pos = 0;
+            var id = setInterval(frame, 5);
+
+            function frame() {
+                if (pos == 350) {
+                    clearInterval(id);
+                } else {
+                    pos++;
+                    elem.style.top = pos + "px";
+                    elem.style.left = pos + "px";
+                }
+            }
+        }
+    </script>
+
+    <hr>
+    <h2>Assign Events Using the HTML DOM</h2>
+    <p>Click "Try it" to execute the displayDate() function.</p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("myBtn").onclick = displayDate;
+
+        function displayDate() {
+            document.getElementById("demo2").innerHTML = Date();
+        }
+    </script>
+
+    <hr>
+    <h2>Mouse Over</h2>
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)"
+        style="background-color:#D94A38;width:120px;height:20px;padding:40px;">
+        Mouse Over Me</div>
+
+    <script>
+        function mOver(obj) {
+            obj.innerHTML = "Thank You"
+        }
+
+        function mOut(obj) {
+            obj.innerHTML = "Mouse Over Me"
+        }
+    </script>
+
+    <hr>
+    <h2>Add Many Event Handlers to the Same Element-1</h2>
+    <p>This example uses the addEventListener() method to add two click events to the same button.</p>
+
+    <button id="myBtn1">Try it</button>
+
+    <script>
+        var x = document.getElementById("myBtn1");
+        x.addEventListener("click", myFunction);
+        x.addEventListener("click", someOtherFunction);
+
+        function myFunction() {
+            alert("Hello World!");
+        }
+
+        function someOtherFunction() {
+            alert("This function was also executed!");
+        }
+    </script>
+    <hr>
+    <h2>Add Many Event Handlers to the Same Element-2</h2>
+    <p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+    <button id="myBtn2">Try it</button>
+
+    <p id="demo3"></p>
+
+    <script>
+        var x = document.getElementById("myBtn2");
+        x.addEventListener("mouseover", myFunction);
+        x.addEventListener("click", mySecondFunction);
+        x.addEventListener("mouseout", myThirdFunction);
+
+        function myFunction() {
+            document.getElementById("demo3").innerHTML += "Moused over!<br>";
+        }
+
+        function mySecondFunction() {
+            document.getElementById("demo3").innerHTML += "Clicked!<br>";
+        }
+
+        function myThirdFunction() {
+            document.getElementById("demo3").innerHTML += "Moused out!<br>";
+        }
+    </script>
+
+    <hr>
+
+
+</body>
+
+</html>
