@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS_DOM</title>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab8-3 : JS_DOM_210113</p>
+        <hr>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data">
+        <h2>Upload Files!</h2>
+        <div id="files">
+            <p><input type="file" name="uploaded_file[]" /></p>
+        </div>
+        <button type="button" onclick="addFile()">Add File</button>
+    </form>
+</body>
+<script>
+    function addElement(parentId, tag, elementId, html) {
+        var p = document.getElementById(parentId);
+        var newElement = document.createElement(tag);
+        newElement.setAttribute('id', elementId);
+        newElement.innerHTML = html;
+        p.appendChild(newElement);
+    }
+
+    function removeElement(elementId) {
+        var elem = document.getElementById(elementId);
+        elem.parentNode.removeChild(elem);
+        //fileId를 계속 increment해주기 때문에 elementId는 항상 가장 최근에 만들어진 폼의 id값과 일치한다.
+        //즉, fileId--; 를 작성해주지 않으면 remove를 눌러도 하나밖에 제거가 안됨.
+        fileId--;
+    }
+    var fileId = 0;
+
+    function addFile() {
+        //id = 1,2,3,4,...
+        fileId++;
+        var x = "<input type = 'file' name = 'uploaded_file[]' />" +
+            "<a href='#' onclick='removeElement(fileId)'>Remove!</a>";
+        addElement('files', 'p', fileId, x);
+    }
+</script>
+
+</body>
+
+</html>
