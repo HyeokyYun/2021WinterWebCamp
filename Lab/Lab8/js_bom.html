@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_bom</title>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab8-2 : JS_BOM_210113</p>
+        <hr>
+    </div>
+
+    <h2>Screen Width & Height</h2>
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML =
+            "Screen height is " + screen.height + " Screen width is " + screen.width;
+    </script>
+
+    <hr>
+
+
+    <h2>JavaScript-Location</h2>
+
+    <h3>The window.location object</h3>
+
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("demo2").innerHTML =
+            "The full URL of this page is:<br>" + window.location.href;
+    </script>
+
+    <hr>
+
+    <h2>JavaScript-Hostname</h2>
+
+    <h3>The window.location object</h3>
+
+    <p id="demo3"></p>
+
+    <script>
+        document.getElementById("demo3").innerHTML =
+            "Page hostname is: " + window.location.hostname;
+    </script>
+
+    <hr>
+
+    <h2>JavaScript Alert</h2>
+
+    <button onclick="myFunction1()">Try it</button>
+
+    <script>
+        function myFunction1() {
+            alert("I am an alert box!");
+        }
+    </script>
+
+    <hr>
+
+    <h2>JavaScript Confirm Box</h2>
+
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo4"></p>
+
+    <script>
+        function myFunction2() {
+            var txt;
+            if (confirm("Press a button!")) {
+                txt = "You pressed OK!";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo4").innerHTML = txt;
+        }
+    </script>
+
+    <hr>
+
+    <h2>JavaScript Prompt</h2>
+
+    <button onclick="myFunction3()">Try it</button>
+
+    <p id="demo5"></p>
+
+    <script>
+        function myFunction3() {
+            var txt;
+            var person = prompt("Please enter your name:", "Unknown");
+            if (person == null || person == "") {
+                txt = "User cancelled the prompt.";
+            } else {
+                txt = "Hello " + person + "! How are you today?";
+            }
+            document.getElementById("demo5").innerHTML = txt;
+        }
+    </script>
+
+    <hr>
+    <h2>Timing 1</h2>
+    <p>Click "Try it". Wait 3 seconds, and the page will alert "Hello".</p>
+
+    <button onclick="setTimeout(myFunction4, 3000);">Try it</button>
+
+    <script>
+        function myFunction4() {
+            alert('Hello');
+        }
+    </script>
+
+    <hr>
+
+    <h2>Timing 2</h2>
+    <p>Click "Try it". Wait 3 seconds. The page will alert "Hello".</p>
+    <p>Click "Stop" to prevent the first function to execute.</p>
+    <p>(You must click "Stop" before the 3 seconds are up.)</p>
+
+    <button onclick="myVar = setTimeout(myFunction5, 3000)">Try it</button>
+
+    <button onclick="clearTimeout(myVar)">Stop it</button>
+
+    <script>
+        function myFunction5() {
+            alert("Hello");
+        }
+    </script>
+
+    <hr>
+
+    <h2>Timing 3</h2>
+    <p>A script on this page starts this clock:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+
+        function myTimer() {
+            var d = new Date();
+            document.getElementById("demo6").innerHTML = d.toLocaleTimeString();
+        }
+    </script>
+</body>
+
+</html>
