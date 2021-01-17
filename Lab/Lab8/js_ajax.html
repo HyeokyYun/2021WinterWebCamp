@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_ajax</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab8-2 : JS_AJAX_210113</p>
+        <hr>
+    </div>
+
+    <h2>The XMLHttpRequest Object - 1 (XMLHttp)</h2>
+
+    <p id="demo1">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc1()">Change Content</button>
+
+    <script>
+        function loadDoc1() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo1").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "ajax_info.txt", true);
+            xhttp.send();
+        }
+    </script>
+
+    <hr>
+
+    <h2>The XMLHttpRequest Object - 2 (Request)</h2>
+
+    <button type="button" onclick="loadDoc2()">Request data</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        function loadDoc2() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo2").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "demo_get.asp", true);
+            xhttp.send();
+        }
+    </script>
+
+    <hr>
+
+    <div id="demo3">
+
+        <h2>The XMLHttpRequest Object - 3 (Response)</h2>
+
+        <button type="button" onclick="loadDoc3('ajax_info.txt', myFunction1)">Change Content
+        </button>
+    </div>
+
+    <script>
+        function loadDoc3(url, cFunction) {
+            var xhttp;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    cFunction(this);
+                }
+            };
+            xhttp.open("GET", url, true);
+            xhttp.send();
+        }
+
+        function myFunction1(xhttp) {
+            document.getElementById("demo3").innerHTML =
+                xhttp.responseText;
+        }
+    </script>
+
+    <hr>
+
+    <h2>The XMLHttpRequest Object - 4 (XML)</h2>
+
+    <button type="button" onclick="loadDoc4()">Get my CD collection</button>
+    <br><br>
+    <table id="demo4"></table>
+
+    <script>
+        function loadDoc4() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    myFunction2(this);
+                }
+            };
+            xhttp.open("GET", "cd_catalog.xml", true);
+            xhttp.send();
+        }
+
+        function myFunction2(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table = "<tr><th>Artist</th><th>Title</th></tr>";
+            var x = xmlDoc.getElementsByTagName("CD");
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+                    "</td><td>" +
+                    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+                    "</td></tr>";
+            }
+            document.getElementById("demo4").innerHTML = table;
+        }
+    </script>
+
+    <hr>
+
+    <h2>The XMLHttpRequest Object - 5 (PHP)</h2>
+
+    <h3>Start typing a name in the input field below:</h3>
+
+    <p>Suggestions: <span id="txtHint1"></span></p>
+
+    <p>First name: <input type="text" id="txt1" onkeyup="showHint(this.value)"></p>
+
+    <script>
+        function showHint(str) {
+            var xhttp;
+            if (str.length == 0) {
+                document.getElementById("txtHint1").innerHTML = "";
+                return;
+            }
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("txtHint1").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "gethint.php?q=" + str, true);
+            xhttp.send();
+        }
+    </script>
+
+    <hr>
+
+
+</body>
+
+</html>
