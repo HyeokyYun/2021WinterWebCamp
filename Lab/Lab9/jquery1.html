@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery1</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab9-1 : jQuery_210114</p>
+        <hr>
+    </div>
+
+    <h2>focus()</h2>
+    Name: <input type="text" name="fullname"><br>
+    Email: <input type="text" name="email">
+
+    <script>
+        $(document).ready(function () {
+            $("input").focus(function () {
+                $(this).css("background-color", "yellow");
+            });
+            $("input").blur(function () {
+                $(this).css("background-color", "pink");
+            });
+        });
+    </script>
+    <hr>
+
+    <h2>Multiple Events</h2>
+    <script>
+        $(document).ready(function () {
+            $("#1").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
+            });
+        });
+    </script>
+
+    <p id="1">Click or move the mouse pointer over this paragraph.</p>
+
+    <hr>
+
+    <h2>Changing</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("#p1").css("color", "red")
+                    .slideUp(2000)
+                    .slideDown(2000);
+            });
+        });
+    </script>
+
+
+    <p id="p1">jQuery is fun!!</p>
+
+    <button id="btn1">Click me</button>
+
+    <hr>
+
+    <h2>Get - val()</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn2").click(function () {
+                alert("Value: " + $("#test1").val());
+            });
+        });
+    </script>
+    <p id="p2">Name: <input type="text" id="test1" value="Mickey Mouse"></p>
+
+    <button id="btn2">Show Value</button>
+
+    <hr>
+
+    <h2>Set Attributes - change URL</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn3").click(function () {
+                $("#w3s").attr("href", "https://www.w3schools.com/jquery/");
+            });
+        });
+    </script>
+    <p id="p3"><a href="https://www.w3schools.com" id="w3s">W3Schools.com</a></p>
+
+    <button id="btn3">Change href Value</button>
+
+    <p>Mouse over the link (or click on it) to see that the value of the href attribute has changed.</p>
+
+    <hr>
+
+    <h2>Add - Append/Prepend</h2>
+    <script>
+        $(document).ready(function () {
+            $(document).ready(function () {
+
+                $("#btn4").click(function () {
+                    $("ol").prepend("<li>Prepended item</li>");
+                });
+
+                $("#btn5").click(function () {
+                    $("ol").append("<li>Appended item</li>");
+                });
+            });
+        });
+    </script>
+    <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+    </ol>
+
+    <button id="btn4">Prepend list items</button>
+    <button id="btn5">Append list items</button>
+
+    <hr>
+
+    <h2>CSS</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn6").click(function () {
+                $(".p4").css({
+                    "background-color": "yellow",
+                    "font-size": "200%"
+                });
+            });
+        });
+    </script>
+    <h3>This is a heading</h3>
+
+    <p class="p4" style="background-color:#ff0000">This is a paragraph.</p>
+    <p class="p4" style="background-color:#00ff00">This is a paragraph.</p>
+    <p class="p4" style="background-color:#0000ff">This is a paragraph.</p>
+
+    <p class="p4">This is a paragraph.</p>
+
+    <button id="btn6">Set multiple styles for p</button>
+
+    <hr>
+
+    <h2>Toggle Hide/Show</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn7").click(function () {
+                $(".p5").toggle();
+            });
+        });
+    </script>
+
+    <button id="btn7">Toggle between hiding and showing the paragraphs</button>
+
+    <p class="p5">This is a paragraph with little content.</p>
+    <p class="p5">This is another small paragraph.</p>
+
+    <hr>
+
+    <h2>FadeIn/Out Toggle</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn8").click(function () {
+                $("#div1").fadeToggle();
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(3000);
+            });
+        });
+    </script>
+    <p>Demonstrate fadeToggle() with different speed parameters.</p>
+
+    <button id="btn8">Click to fade in/out boxes</button><br><br>
+
+    <div id="div1" style="width:80px;height:80px;background-color:red;"></div>
+    <br>
+    <div id="div2" style="width:80px;height:80px;background-color:green;"></div>
+    <br>
+    <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
+
+
+    <hr>
+
+    <h2>SlideUp/Down Toggle</h2>
+    <script>
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+
+    <style>
+        #panel,
+        #flip {
+            padding: 5px;
+            text-align: center;
+            background-color: #e5eecc;
+            border: solid 1px #c3c3c3;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none;
+        }
+    </style>
+    </head>
+
+    <div id="flip">Click to slide the panel down or up</div>
+    <div id="panel">Hello world!</div>
+
+    <hr>
+
+    <h2>Animation</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn9").click(function () {
+                var div = $("#div4");
+                div.animate({
+                    left: '100px'
+                }, "slow");
+                div.animate({
+                    fontSize: '3em'
+                }, "slow");
+            });
+        });
+    </script>
+    <button id="btn9">Start Animation</button>
+
+    <p>By default, all HTML elements have a static position, and cannot be moved. To manipulate the position,
+        remember to first set the CSS position property of the element to relative, fixed, or absolute!</p>
+
+    <div id="div4" style="background:#98bf21;height:100px;width:200px;position:absolute;">HELLO</div>
+    <br><br><br><br><br><br>
+    <hr>
+
+    <h2>Callback</h2>
+    <script>
+        $(document).ready(function () {
+            $("#btn10").click(function () {
+                $("#p6").hide("slow", function () {
+                    alert("The paragraph is now hidden");
+                });
+            });
+        });
+    </script>
+    <button id="btn10">Hide</button>
+
+    <p id="p6">This is a paragraph with little content.</p>
+
+</body>
+
+</html>

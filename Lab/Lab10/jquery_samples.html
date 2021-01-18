@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuerySamples</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h1>Example1</h1>
+    <form id="exer" action="jqsample.php" method="post">
+        Input: <input type="text" name="input" />
+        <input type="submit" value="Submit" />
+    </form>
+    <script>
+        $(document).ready(function(){
+            $('#exer').submit(function(){
+                alert("Thank you!");
+            });
+        });
+    </script>
+
+    <hr>
+    
+    <h1>Example2</h1>
+    <h3>createElement() example</h3>
+    <p>Click the below button to create more buttons</p>
+    <button id='add'>CREATE</button>
+    <br><br>
+
+    <script>
+        var i = 0;
+        $(document).ready(function () {
+            $("#add").click(function () {
+                i++;
+                var el = "<button class='test'>Button" + i + "</button>";
+                $("body").append(el);
+                $("body").append('<br />');
+            });
+
+            $("button.test").click(function () {
+                alert('test');
+            });
+
+            $(document).on('click', 'button.test', function () {
+                $(this).remove();
+                alert('test');
+            });
+        });
+    </script>
+</body>
+
+</html>

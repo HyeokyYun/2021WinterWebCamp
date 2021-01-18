@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js_samples</title>
+</head>
+
+<body>
+    <h1>Example1</h1>
+
+    <button type="button" onclick="loadDoc2()">Send an HTTP POST request to a page and get the result back</button>
+
+    <p id="demo2"></p>
+
+    <script>
+        function loadDoc2() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo2").innerHTML = this.responseText;
+                }
+            };
+            xhttp.open("GET", "jssample.php", true);
+            xhttp.send();
+        }
+    </script>
+    <hr>
+
+
+    <h1>Example2</h1>
+    <h3>createElement() example</h3>
+    <p>Click the below button to create more buttons</p>
+    <button onclick="createButton()">CREATE</button>
+    <script>
+        var i = 0;
+
+        function createButton() {
+            i++;
+            var btn = document.createElement("BUTTON");
+            btn.innerHTML = "BUTTON" + i;
+            btn.id = 'btn' + i;
+            btn.onclick = function () {
+                deleteButton(this)
+            }
+            var br = document.createElement("BR");
+            document.body.appendChild(btn);
+
+        }
+
+        function deleteButton(obj) {
+            alert('aaaa');
+            document.body.removeChild(obj);
+        }
+    </script>
+</body>
+
+</html>

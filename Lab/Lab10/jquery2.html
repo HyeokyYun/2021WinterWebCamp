@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .ancestors * {
+            display: block;
+            border: 2px solid lightgrey;
+            color: lightgrey;
+            padding: 5px;
+            margin: 15px;
+        }
+
+        body {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title" style="background-color: bisque; padding: 5px">
+        <p>21700487 Hyeok Yun</p>
+        <p>Lab10-1 : jQuery_210115</p>
+        <hr>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                $("#div1").load("demo_test.txt", function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        alert("External content loaded successfully!");
+                    if (statusTxt == "error")
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                });
+            });
+        });
+    </script>
+
+    <h2>jQuery Load</h2>
+    <div id="div1">
+        <h3>Let jQuery AJAX Change This Text</h3>
+    </div>
+
+    <button>Get External Content</button>
+
+    <hr>
+
+    <h2>jQuery Ancestors</h2>
+    <script>
+        $(document).ready(function () {
+            $("span").parent().css({
+                "color": "red",
+                "border": "2px solid red"
+            });
+        });
+    </script>
+
+    <div class="ancestors">
+        <div style="width:500px;">div (great-grandparent)
+            <ul>ul (grandparent)
+                <li>li (direct parent)
+                    <span>span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div style="width:500px;">div (grandparent)
+            <p>p (direct parent)
+                <span>span</span>
+            </p>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2>jQuery Descendants</h2>
+    <div class="descendants" style="width:500px;">div (current element)
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+        <p>p (child)
+            <span>span (grandchild)</span>
+        </p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $(".descendants").children().css({
+                "color": "red",
+                "border": "2px solid red"
+            });
+        });
+    </script>
+
+    <hr>
+
+    <h2>jQuery Filter</h2>
+    <script>
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h4>Filterable Table</h4>
+    <p>Type something in the input field to search the table for first names, last names or emails:</p>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+            </tr>
+            <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@mail.com</td>
+            </tr>
+            <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@greatstuff.com</td>
+            </tr>
+            <tr>
+                <td>Anja</td>
+                <td>Ravendale</td>
+                <td>a_r@test.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Note that we start the search in tbody, to prevent filtering the table headers.</p>
+
+</body>
+
+</html>
