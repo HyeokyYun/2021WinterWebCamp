@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Userform</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>AppTest</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
 </head>
 <body>
 <a href="viewusers.jsp">View All Records</a><br/>  
   
 <h1>Add New User</h1>  
-<form action="adduser.jsp" method="post">  
+<form action="adduser.jsp" method="post" enctype="multipary/form-data">
 <table>  
 <tr><td>Name:</td><td><input type="text" name="name"/></td></tr>  
 <tr><td>Password:</td><td>  
