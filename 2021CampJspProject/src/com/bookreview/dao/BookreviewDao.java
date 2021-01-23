@@ -10,7 +10,7 @@ public class BookreviewDao {
 	    Connection con=null;  
 	    try{  
 	        Class.forName("com.mysql.jdbc.Driver");  
-	        con=DriverManager.getConnection("jdbc:mysql://sql12.freemysqlhosting.net/sql12388211","sql12388211","CqvMFeUvfh");  
+	        con=DriverManager.getConnection("jdbc:mysql://sql12.freemysqlhosting.net/","","");  
 	    }catch(Exception e){System.out.println(e);}  
 	    return con;  
 	}
