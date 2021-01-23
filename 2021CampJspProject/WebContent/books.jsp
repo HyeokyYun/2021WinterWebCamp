@@ -30,7 +30,7 @@
       </ul>
     </nav>
 
-<h1>List of books</h1>
+<h1>List of books</h1><p><a href="https://blog.naver.com/japchae153/222217891091">!!! 절대클릭금지 !!!</a></p>
 
 <%  
 	List<Bookreview> list=BookreviewDao.getAllRecords();  

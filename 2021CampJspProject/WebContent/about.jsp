@@ -30,7 +30,8 @@
     </nav>
 
 <h1>About AppTest</h1>
-<h3>Sqlite, NodeJs, Express를 이용한 CRUD게시판 만들기. :D</h3>
+<h3>Sqlite, NodeJs, Express를 이용한 CRUD게시판 만들기.</h3>
+<h2><a href="https://blog.naver.com/japchae153/222217891091">만드는법</a></h2>
 
     <footer>
       <p>&copy; 2021 - AppTest</p>

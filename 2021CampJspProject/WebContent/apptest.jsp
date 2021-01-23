@@ -30,6 +30,7 @@
     </nav>
 
 <h1>CRUD 게시판입니다! :D</h1>
+<h2><a href="https://blog.naver.com/japchae153/222217891091">만드는법</a></h2>
 
     <footer>
       <p>&copy; 2021 - AppTest</p>
