@@ -37,6 +37,14 @@
 	    <version>8.0.21</version>
 	</dependency>
 	
+	<!-- https://mvnrepository.com/artifact/servlets.com/cos -->
+	<dependency>
+	    <groupId>servlets.com</groupId>
+	    <artifactId>cos</artifactId>
+	    <version>05nov2002</version>
+	</dependency>
+	
+	
   </dependencies>
 	
 </project>
