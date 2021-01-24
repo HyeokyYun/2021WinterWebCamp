@@ -37,7 +37,7 @@
 
 <h1>기록 편집하기</h1>
 
-<form action="editbook.jsp" method="post">
+<form action="editbook.jsp" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="seq" value="<%=u.getSeq() %>"/>
 	
     <div class="form_horizontal">
@@ -61,6 +61,14 @@
       <textarea class="form-control" name="content" rows="7" cols="20"><%=u.getContent() %></textarea>
     </div>
 </div>
+<div class="form-group row">
+    	<label class="col-form-label col-sm-2" for="image">File Upload</label>
+    	<div class="col-sm-7">
+    	<img src="${pageContext.request.contextPath }/upload/<%=u.getImage()%>" style="width:150px;height:150px;">
+    		<input type="file" class="form-control" name="image" />
+    	</div>
+    </div>
+
       <div class="form-group row">
         <label class="col-form-label col-sm-2"></label>
         <div class="col-sm-10">

@@ -30,7 +30,7 @@
 
 
 <h1>새로운 책 추가하기</h1>
-<form action="addbook.jsp" method="post">
+<form action="addbook.jsp" method="post" enctype="multipart/form-data">
   <div class="form-horizontal">
 
     <div class="form-group row">
@@ -53,6 +53,12 @@
       <textarea class="form-control" name="content" rows="7" cols="20"></textarea>
     </div>
 </div>
+	<div class="form-group row">
+    	<label class="col-form-label col-sm-2" for="image">File Upload</label>
+    	<div class="col-sm-7">
+    		<input type="file" class="form-control" name="image" />
+    	</div>
+    </div>
 
     <div class="form-group row">
       <label class="col-form-label col-sm-2"></label>
@@ -61,6 +67,8 @@
         <a href="books.jsp" class="btn btn-outline-dark cancel">Cancel</a>
       </div>
     </div>
+    
+    
   </div>
 </form>
 

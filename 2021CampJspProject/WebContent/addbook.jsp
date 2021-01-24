@@ -1,18 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.File"%>
+<%@ page import="com.oreilly.servlet.*"%>
+<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.bookreview.dao.BookreviewDao"%>
+<%@page import="com.bookreview.bean.Bookreview"%>
+<%
+    request.setCharacterEncoding("UTF-8");
+%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<%@page import="com.bookreview.dao.BookreviewDao"%>
+
 <jsp:useBean id="u" class="com.bookreview.bean.Bookreview"></jsp:useBean>  
 <jsp:setProperty property="*" name="u"/>  
   
 <%  
+String filename = "";
+int sizeLimit = 15 * 1024 * 1024;
+String realPath = request.getServletContext().getRealPath("upload");
+System.out.println(realPath);
+File dir = new File(realPath);
+	if (!dir.exists())
+		dir.mkdirs();
+MultipartRequest multpartRequest = null;
+multpartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+String title = multpartRequest.getParameter("title");
+String writer = multpartRequest.getParameter("writer");
+String content = multpartRequest.getParameter("content");
+filename = multpartRequest.getFilesystemName("image");
+
+u.setTitle(title);
+u.setWriter(writer);
+u.setContent(content);
+u.setImage(filename);
+
 int i=BookreviewDao.save(u);  
+
 if(i>0){  
 response.sendRedirect("books.jsp");  
 }else{  
