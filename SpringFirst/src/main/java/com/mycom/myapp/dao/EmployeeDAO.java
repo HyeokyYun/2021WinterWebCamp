@@ -1,4 +1,3 @@
-
 package com.mycom.myapp.dao;
 
 import java.util.List;

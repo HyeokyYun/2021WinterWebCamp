@@ -17,6 +17,6 @@ public class EmployeeController {
 	@RequestMapping(value = "/getAllEmployees", method = RequestMethod.GET)
 	public String getAllEmployees(Model model) {
 		model.addAttribute("employees", manager.getAllEmployees());
-		return "employeesListDisplay";
+		return "employeeListDisplay";
 	}
 }

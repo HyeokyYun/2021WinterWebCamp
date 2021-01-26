@@ -9,6 +9,13 @@ public class EmployeeVO implements Serializable {
 	private String firstName;
 	private String lastName;
 
+	// Setters and Getters
+
+	@Override
+	public String toString() {
+		return "EmployeeVO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+	}
+
 	public Integer getId() {
 		return id;
 	}
@@ -35,10 +42,5 @@ public class EmployeeVO implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-
-	@Override
-	public String toString() {
-		return "EmployeeVO [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 }
