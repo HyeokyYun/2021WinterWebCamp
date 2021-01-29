@@ -8,9 +8,9 @@
 	<bean id="ds"
 	class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-	<property name="url" value="jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12388211"></property>
-	<property name="username" value="sql12388211"></property>
-	<property name="password" value="CqvMFeUvfh"></property>
+	<property name="url" value="jdbc:mysql://sql12.freemysqlhosting.net:3306/sql12389601"></property>
+	<property name="username" value="sql12389601"></property>
+	<property name="password" value="T16PYg4iZn"></property>
 	</bean>
 
 	<bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
